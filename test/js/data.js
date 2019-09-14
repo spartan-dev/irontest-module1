@@ -1,65 +1,67 @@
-// Characters
- /**
+var per = [
+  // Characters
 
-    name: "Rick Sanchez"
-    status: "Alive"
-    species: "Human"
-    type: ""
+  {
+    name: "Rick Sanchez",
+    status: "Alive",
+    species: "Human",
+    type: "",
     gender: "Male"
-
-
-    name: "Morty Smith"
-    status: "Alive"
-    species: "Human"
-    type: ""
+  },
+  {
+    name: "Morty Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
     gender: "Male"
-
-    name: "Summer Smith"
-    status: "Alive"
-    species: "Human"
-    type: ""
+  },
+  {
+    name: "Summer Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
     gender: "Female"
-
-    name: "Beth Smith"
-    status: "Alive"
-    species: "Human"
-    type: ""
+  },
+  {
+    name: "Beth Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
     gender: "Female"
-
-    name: "Jerry Smith"
-    status: "Alive"
-    species: "Human"
-    type: ""
+  },
+  {
+    name: "Jerry Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
     gender: "Male"
-
-    name: "Abadango Cluster Princess"
-    status: "Alive"
-    species: "Alien"
-    type: ""
+  },
+  {
+    name: "Abadango Cluster Princess",
+    status: "Alive",
+    species: "Alien",
+    type: "",
     gender: "Female"
-
-    name: "Abradolf Lincler"
-    status: "unknown"
-    species: "Human"
-    type: "Genetic experiment"
+  },
+  {
+    name: "Abradolf Lincler",
+    status: "unknown",
+    species: "Human",
+    type: "Genetic experiment",
     gender: "Male"
-
-    name: "Adjudicator Rick"
-    status: "Dead"
-    species: "Human"
-    type: ""
+  },
+  {
+    name: "Adjudicator Rick",
+    status: "Dead",
+    species: "Human",
+    type: "",
     gender: "Male"
-
-    name: "Agency Director"
-    status: "Dead"
-    species: "Human"
-    type: ""
+  },
+  {
+    name: "Agency Director",
+    status: "Dead",
+    species: "Human",
+    type: "",
     gender: "Male"
-
-    name: "Alan Rails"
-    status: "Dead"
-    species: "Human"
-    type: "Superhuman (Ghost trains summoner)"
-    gender: "Male"
-  
-  */
+  }
+];
