@@ -1,6 +1,5 @@
 # irontest-module1
 pequeño test de modulo 1 para los ironhackers
-![alt text](https://kainmaligno.github.io/irontest-module1/)
 <br>
 
 # Css Fulfill your destiny in the War of CSS/flexbox
