@@ -19,6 +19,32 @@ h2{
    text-rendering: optimizelegibility;
 
 }
+.btn{
+    background: #58ceef;
+    border: 2px solid #58ceef;
+    color: #fff;
+    display: inline-block;
+    line-height: 1;
+    outline: 0;
+    padding: 15px 1.5em;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: uppercase;
+    transition: .2s;
+    white-space: nowrap;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+    height: 80px;
+    width:300px;
+}
+
+.btn > a{
+    text-decoration: none;
+}
 .header {
   position: relative;
   font-size: 1.25em;
