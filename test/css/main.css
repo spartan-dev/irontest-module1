@@ -1,0 +1,50 @@
+header{
+ background-color: red;
+ height:80px ;
+}
+aside{
+  background-color: blueviolet;
+  height: 80px;
+}
+footer{
+  background-color: green;
+  height: 80px;
+}
+.div{
+  background-color: deepskyblue;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.item1{
+  height: 100px;
+  background-color: skyblue;
+  width: 500px;
+}
+
+.item2{
+  height: 300px;
+  background-color: skyblue;
+  width: 100px;
+}
+.item3{
+  width: 300px;
+  background-color: skyblue;
+  height: 100px;
+}
+.item4{
+  height: 300px;
+  background-color: skyblue;
+  width: 100px;
+}
+.item5{
+  height: 100px;
+  background-color: skyblue;
+  width: 500px;
+}
+
+
+
+
+
