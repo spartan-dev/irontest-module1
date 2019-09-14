@@ -1,0 +1,84 @@
+/* * {
+    background: red;
+} */
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+#header {
+    background: red;
+    width: 100%;
+    height: 50px;
+    color: white;
+    text-align: center;
+}
+
+#aside {
+    background: purple;
+    width: 100%;
+    height: 50px;
+    color: white;
+    text-align: center;
+}
+
+#content {
+    background: cadetblue;
+    width: 100%;
+    height: 500px;
+}
+
+#footer {
+    background: green;
+    width: 100%;
+    height: 50px;
+    color: white;
+    text-align: center;
+}
+
+/* HTML dungeon */
+#foggy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#cover {
+    background: url(https://previews.123rf.com/images/pakhnyushchyy/pakhnyushchyy1107/pakhnyushchyy110700307/10050624-green-forest-background-in-a-sunny-day.jpg) 0 0 no-repeat;
+    background-size: cover;
+    height: 650px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    font: italic bold 30px Georgia, serif;
+    /* flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#cover img {
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#social div {
+    width: 33%;
+    border: 1px solid black;
+    text-align: center;
+}
