@@ -5,7 +5,7 @@ var na = per;
 getFirtsThreeElements = () => {
   //...write your code here
   let [a, b, c] = na;
-  console.log("The first three" /** here your new answer*/);
+  console.log("The first three", a, b, c);
 };
 //Find all the characters whose species is Aliens nad return in new array
 getAliens = () => {
@@ -41,19 +41,38 @@ getFamilySmith = () => {
       familySmith.push(el);
   });
   console.log("Family Smith:", familySmith);
+  return familySmith;
 };
 //Jerry and Beth have divorced, remove Jerry from the Array Smith Family, and get a random family member and print all their values
 familyBroken = () => {
   //...write your code here
-
-  console.log("Family without Jerry" /** here your new answer*/);
-  console.log("Random member name:, status:, species:, type:, gender:");
+  let fs = getFamilySmith();
+  for (let index = 0; index < fs.length; index++) {
+    const element = fs[index];
+    if (element.name.includes("Jerry")) {
+      let right_side = fs.splice(index, fs.length);
+      fs.concat(right_side);
+    }
+  }
+  console.log("Family without Jerry", fs);
+  let random = fs[~~(Math.random() * fs.length)];
+  console.log(
+    `Random member name:${random.name}, status:${random.status}, species${random.species}, type:${random.type}, gender:${random.gender}`
+  );
 };
 //The Final test, Rick needs to have more order, the original Array creates a new object, in which you group by status, without altering the original
 orderArray = () => {
   //...write your code here
+  let buckets = { dead: [], alive: [], unk: [] };
+  //naive approach
 
-  console.log("new order" /** here your new answer*/);
+  na.forEach(element => {
+    if (element.status === "Alive") buckets.alive.push(element);
+    if (element.status === "Dead") buckets.dead.push(element);
+    if (element.status === "unknown") buckets.unk.push(element);
+  });
+  console.log(`new order:\nAlive:\n${buckets.alive}\nDead:\n${buckets.dead}\n
+  \ Unkown:\n${buckets.unk}`);
 };
 
 //In this part we execute our functions
