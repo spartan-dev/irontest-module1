@@ -1,82 +1,140 @@
 /* FLEX STYLES */
+*{
+  font-family: 'Concert One', Impact;
+  scroll-behavior: smooth;
+} 
+
 body {
   margin: 0px;
-  padding: 0px;
 }
 h1 {
   color: white;
-  text-align: center;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: normal;
 }
-header{
+header, aside, footer{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header {
   background-color: red;
-  margin: 0px;
-  padding: 5px;
 }
 aside {
   background-color: purple;
-  margin: 0px;
-  padding: 5px;
+}
+footer {
+  background-color: green;
 }
 
 .content{
-  background-color: blue;
+  background-color: #2096f3;
   margin: 0px;
-  padding: 10px;
-  height: 400px;
-  display: flex;
-  align-items: stretch;
+  height: calc(70vh - 60px);
+  padding: 30px 40px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 20% 60% 20%;
+  grid-gap: 20px;
 }
+
 .content > div {
-  background-color: lightblue;
-  margin: 10px;
-  padding: 20px;
-  text-align: center;
-  display: flex;
+  background-color: #d7eafd;
+  display: inherit;
   justify-content: center;
   align-items: center;
 }
 
-footer {
-  margin: 0px;
-  padding: 5px;
-  background-color: green;
-}
-
 .item1{
-  width: 70%;
-  height: 20%;
-  justify-content: flex-end;
-  display: flex;
+  grid-column-start: 2;
+  grid-column-end: 4;
 }
 .item2{
-  width: 30%;
-  height: 80%;
-  justify-content: flex-start;
+  grid-column-start: 0;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 .item3{
-  width: 40%;
-  height: 20%;
+  grid-column-start: 2;
 }
 .item4 {
-  width: 30%;
-  height: 80%;
+  grid-column-start: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
 }
 .item5 {
-  width: 70%;
-  height: 20%;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.goTo {
+  position: absolute;
+  bottom: 6%;
+  right: 10%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  background-color: yellow;
+  cursor: pointer;
+}
+.goTo:focus {
+  outline: none;
 }
 /* END FLEX STYLES END */
+
+
+
+
 
 
 /* HTML STYLES */
 
 .froggyExcerciseHTML {
-  background-color: aqua;
+  background: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.1)), url("../img/back.jpg") no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+}
+.profile {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
 }
 .profile img {
-  border: 4px;
-  
+  border: 8px solid white;
+  width: 27%;
+  max-width: 200px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+  margin: 10px auto;
+  border-radius: 50%;
+  justify-content: center;
+}
+.info {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  align-items: flex-end;
+  height: 30vh;
+
+}
+.cell{
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid black;
+  width: 33.33%;
+  background-color: white;
+  color: black;
+  margin: 0;
+}
+.cell p {
+  font-size: 1.5em;
+  margin-bottom: 0;
 }
