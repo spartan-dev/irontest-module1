@@ -2,15 +2,17 @@
 
 
 //Get the first three elements of the Array without altering the original Array
-getFirtsThreeElements=()=>{
-    //...write your code here
+getFirtsThreeElements=(array)=>{
+    element1 = array[0];
+    element2 = array[1];
+    element3 = array[2];
 
-    console.log('The first three',/** here your new answer*/)
+    console.log(`The first three are ${element1}, ${element2}, ${element3}.`)
 }
 //Find all the characters whose species is Aliens nad return in new array
 getAliens=()=>{
-    //...write your code here
-    console.log('the alien is:',/** here your new answer*/)
+    let newArray = array.filter(element => element.species !== "Human");
+    console.log('the alien is:', newArray)
 }
 //create a new character and add it to the matrix and add consecutive identifiers (1,2, ... n) to all characters
 newCharacter=()=>{
