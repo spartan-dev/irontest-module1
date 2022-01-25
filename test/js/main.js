@@ -63,31 +63,40 @@ const charactersArray = [{
 //Get the first three elements of the Array without altering the original Array
 getFirtsThreeElements = () => {
     let firstElements = charactersArray.slice(0, 2)
-    console.log('The first three', firstElements )
+    console.log('The first three', firstElements)
 }
 //Find all the characters whose species is Aliens nad return in new array
 getAliens = () => {
-    for (let i = 0; i < charactersArray.length; i++){
-        console.log('the alien is:', charactersArray.species[2])} 
+    let aliens = charactersArray.filter(charactersArray => charactersArray['species'] === 'Alien')
+    console.log('the alien is:', aliens)
 }
 //create a new character and add it to the matrix and add consecutive identifiers (1,2, ... n) to all characters
 newCharacter = () => {
-    //...write your code here
+    let newChar = {
+        name: "Amish Cyborg",
+        status: "Dead",
+        species: "Alien",
+        type: "Parasite",
+        gender: "Male",
+    };
 
-    console.log('New Charanter and id to all:', /** here your new answer*/ )
+    charactersArray.unshift(newChar);
+    console.log('New Charanter and id to all:', charactersArray)
+    //miss add ID
 }
 //find the family smith (Morty, Beth, Summer, Jerry, Rick)  in a new Array called familySmith
 getFamilySmith = () => {
-    //...write your code here
+    let familySmith = charactersArray.filter(charactersArray => charactersArray.name.includes('smith') ||
+        charactersArray.name.includes("sanchez"))
 
-    console.log('Family Smith:', /** here your new answer*/ )
+    console.log('Family Smith:', familySmith)
 }
 //Jerry and Beth have divorced, remove Jerry from the Array Smith Family, and get a random family member and print all their values
 familyBroken = () => {
-    //...write your code here
-
-    console.log('Family without Jerry', /** here your new answer*/ )
-    console.log('Random member name:, status:, species:, type:, gender:')
+    let smithNoJerry = smithNoJerry.filter(character => character.name != 'Jerry Smith');
+    console.log('Family without Jerry', smithNoJerry)
+    let randomChar = smithNoJerry[Math.floor(Math.random() * smithNoJerry.length)];
+    console.log('Random member name:, status:, species:, type:, gender:', randomChar)
 }
 //The Final test, Rick needs to have more order, the original Array creates a new object, in which you group by status, without altering the original
 orderArray = () => {
