@@ -1,16 +1,25 @@
-//new array
+const chars = require('./data')
 
 
 //Get the first three elements of the Array without altering the original Array
 getFirtsThreeElements=()=>{
-    //...write your code here
-
-    console.log('The first three',/** here your new answer*/)
+    console.log('The first three',chars.slice(0,3))
 }
 //Find all the characters whose species is Aliens nad return in new array
 getAliens=()=>{
     //...write your code here
-    console.log('the alien is:',/** here your new answer*/)
+    if(chars.length===0){
+        return null
+    } else {
+        const alienArr = []
+        for(let i = 0; i < chars.length; i++){
+            if(chars[i].species === 'Alien'){
+                alienArr.push(chars[i])
+            }
+        }
+        console.log('the alien is:',alienArr)
+        return alienArr
+    }
 }
 //create a new character and add it to the matrix and add consecutive identifiers (1,2, ... n) to all characters
 newCharacter=()=>{
@@ -21,26 +30,62 @@ newCharacter=()=>{
 //find the family smith (Morty, Beth, Summer, Jerry, Rick)  in a new Array called familySmith
 getFamilySmith=()=>{
     //...write your code here
-
-    console.log('Family Smith:',/** here your new answer*/)
+    const familySmith = [];
+    for (let i = 0; i < chars.length; i++){
+        if(chars[i].name.includes('Smith')){
+            familySmith.push(chars[i])
+        }
+    }
+    console.log('Family Smith:',familySmith)
+    return familySmith
 }
 //Jerry and Beth have divorced, remove Jerry from the Array Smith Family, and get a random family member and print all their values
 familyBroken=()=>{
     //...write your code here
-
-    console.log('Family without Jerry',/** here your new answer*/)
-    console.log('Random member name:, status:, species:, type:, gender:')
+    for(i = 0; i<smithFam.length; i++){
+        if(smithFam[i].name.includes('Jerry')){
+            smithFam.splice(i,1)
+        }
+    }
+    console.log('Family without Jerry',smithFam)
+    let min = 0;
+    let max = smithFam.length -1;
+    let randomChar = Math.round(Math.random() * (max - min) + min);
+    console.log(`Random member name: ${smithFam[randomChar].name}, status: ${smithFam[randomChar].status}, species: ${smithFam[randomChar].species}, type: ${smithFam[randomChar].type}, gender: ${smithFam[randomChar].gender}`);
 }
 //The Final test, Rick needs to have more order, the original Array creates a new object, in which you group by status, without altering the original
 orderArray=()=>{
      //...write your code here
+    let aliveChar = [];
+    let deadChar = [];
+    let unknownStatus = [];
 
-    console.log('new order',/** here your new answer*/)
+    for(i=0; i < chars.length; i++){
+        switch(chars[i].status){
+            case 'Alive':
+                aliveChar.push(chars[i])
+                break;
+            case 'Dead':
+                deadChar.push(chars[i])
+                break;
+            default:
+                unknownStatus.push(chars[i])
+        }
+    }
+
+    let finalArr = [...aliveChar, ...deadChar, ...unknownStatus];
+
+    console.log('new order',finalArr)
+    return finalArr;
 }
 
 
 //In this part we execute our functions
-
+getFirtsThreeElements(chars);
+const alien = getAliens(chars);
+const smithFam = getFamilySmith(chars);
+familyBroken(smithFam)
+orderArray(chars);
 
 
 // another problems 😈 <--- bborrar este emoji en ccaso de crash
@@ -59,8 +104,16 @@ IsPalindrome("Ana") returns true
 Write a program which accepts an array of 3 integers and sort them in ascending order.
 */
 //input your code
+function IsPalindrome(str) {
+    let escape = /[\W_]/g;
+    let lowRegStr = str.toLowerCase().replace(escape, '');
+    let reverseStr = lowRegStr.split('').reverse().join(''); 
+    return reverseStr === lowRegStr;
+}
 
-
+console.log(IsPalindrome("Anita lava la tina"))
+console.log(IsPalindrome("Anita lava la ropa"))
+console.log(IsPalindrome('step on no pets'))
 
 
 
@@ -76,7 +129,13 @@ output will be 2426 3934 4628.
 Write a program to takes input two matrix(3*3) array and calculate the multiplication of both matrix.
 */
 //input your code
+function sortNumbers(n1, n2, n3){
+    let arr = [n1, n2, n3]
+    return arr.sort(function(a, b){return a-b});
+}
 
+console.log(sortNumbers(1,100, 20));
+console.log(sortNumbers(39, 26, 28));
 
 
 
@@ -104,10 +163,14 @@ Notice that:
 Write a program which takes integer number and prints the table of this number.
 */
 //input your code
-
-
-
-
+function multiplyMatrix(obj1, obj2){
+    let newObj = {};
+    for(i=0; i<3; i++){
+        for(j=0; j<3; j++){
+            
+        }
+    }
+}
 
 /*
 Example :
