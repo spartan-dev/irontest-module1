@@ -73,6 +73,12 @@ orderArray=()=>{
 
 //In this part we execute our functions
 
+getFirtsThreeElements()
+getAliens()
+newCharacter()
+getFamilySmith()
+familyBroken()
+orderArray()
 
 
 // another problems 😈 <--- bborrar este emoji en ccaso de crash
