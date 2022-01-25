@@ -1,34 +1,125 @@
 //new array
-
+const rickAndMortyArr = [
+  {
+    name: "Rick Sanchez",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Male",
+  },
+  {
+    name: "Morty Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Male",
+  },
+  {
+    name: "Summer Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Female",
+  },
+  {
+    name: "Beth Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Female",
+  },
+  {
+    name: "Jerry Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Male",
+  },
+  {
+    name: "Abadango Cluster Princess",
+    status: "Alive",
+    species: "Alien",
+    type: "",
+    gender: "Female",
+  },
+  {
+    name: "Abradolf Lincler",
+    status: "unknown",
+    species: "Human",
+    type: "Genetic experiment",
+    gender: "Male",
+  },
+  {
+    name: "Adjudicator Rick",
+    status: "Dead",
+    species: "Human",
+    type: "",
+    gender: "Male",
+  },
+  {
+    name: "Agency Director",
+    status: "Dead",
+    species: "Human",
+    type: "",
+    gender: "Male",
+  },
+  {
+    name: "Alan Rails",
+    status: "Dead",
+    species: "Human",
+    type: "Superhuman (Ghost trains summoner)",
+    gender: "Male",
+  },
+];
 
 //Get the first three elements of the Array without altering the original Array
 getFirtsThreeElements=()=>{
     //...write your code here
+    const theFirst3 = rickAndMorty.filter((i, index) => index < 3);
 
-    console.log('The first three',/** here your new answer*/)
+    console.log('The first three', theFirst3);
 }
 //Find all the characters whose species is Aliens nad return in new array
 getAliens=()=>{
     //...write your code here
-    console.log('the alien is:',/** here your new answer*/)
+    const theAliens = rickAndMorty.filter(character => character.species === "Alien");
+    console.log('the alien is:', theAliens);
 }
 //create a new character and add it to the matrix and add consecutive identifiers (1,2, ... n) to all characters
 newCharacter=()=>{
     //...write your code here
+    rickAndMorty.push({
+      name: "Antenna Morty",
+      status: "Alive",
+      species: "Human",
+      type: "Human with antennae",
+      gender: "Male",
+    });
 
-    console.log('New Charanter and id to all:',/** here your new answer*/)
+    let i = 1;
+    rickAndMorty.forEach(character => character.id = i++);
+    console.log("New Charanter and id to all:", rickAndMorty);
 }
 //find the family smith (Morty, Beth, Summer, Jerry, Rick)  in a new Array called familySmith
 getFamilySmith=()=>{
     //...write your code here
+    const familySmith = rickAndMorty
+    .filter(character => {
+        return character.name.includes("Smith") ||
+        character.name.includes("Sanchez")
+    });
 
-    console.log('Family Smith:',/** here your new answer*/)
+    console.log("Family Smith:", familySmith);
+    return familySmith;
 }
 //Jerry and Beth have divorced, remove Jerry from the Array Smith Family, and get a random family member and print all their values
 familyBroken=()=>{
     //...write your code here
+    const smithFam = getFamilySmith();
+    const brokenFam = smithFam.filter(fam => fam.name !== "Jerry Smith");
+    const rand = 0 + (Math.random() * 3);
 
-    console.log('Family without Jerry',/** here your new answer*/)
+    console.log("Family without Jerry", brokenFam);
     console.log('Random member name:, status:, species:, type:, gender:')
 }
 //The Final test, Rick needs to have more order, the original Array creates a new object, in which you group by status, without altering the original
