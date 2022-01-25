@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#header, #aside, #footer {
+    background-color: red;
+    color: white;
+    margin: 0;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+
+#header h1, #aside h1, #footer h1 {
+    margin: 0;
+}
+
+#aside {
+    background-color: rgb(116, 26, 123);
+}
+
+#grid {
+    background-color: rgb(70, 150, 236);
+    height: 500px;
+    
+    display: grid;
+    grid-template-columns: [padL] 3% [firstCol] 25% [inPadL] 2% [middleCol] 40% [inPadR] 2% [secondCol] 25% [padR] 3%;
+    grid-template-rows: [upperPad] 4% [firstRow] 24% [inPadRowUpper] 3% [middleRow] 38% [inPadRowBottom] 3% [secondRow] 24% [padRowBottom] 4%;
+}
+
+#item1,
+#item2,
+#item3,
+#item4,
+#item5 {
+    background-color: rgb(218, 234, 251);
+    color: black;
+    font-weight: 100;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#item1 {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#item2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 5;
+} 
+
+#item3 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 5;
+} 
+
+#item4 {
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 4;
+    grid-row-end: 7;
+} 
+
+#item5 {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 7;
+} 
+
+#footer {
+    background-color: green;
+}
