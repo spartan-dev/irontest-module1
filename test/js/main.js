@@ -167,17 +167,52 @@ Example:
 
 IsPalindrome("Anita lava la tina") returns true
 IsPalindrome("Anita lava la ropa") returns false
-IsPalindrome("Ana") returns true
-Write a program which accepts an array of 3 integers and sort them in ascending order.
-*/
-//input your code
+IsPalindrome("Ana") returns true*/
+getPalindrome = (str) => {
+  const strVerse = str.split(" ").join("").toLowerCase();
+  const strReverse = str
+    .split(" ")
+    .join("")
+    .split("")
+    .reverse()
+    .join("")
+    .toLowerCase();
+
+  console.log(strVerse);
+  console.log(strReverse);
+  if (strVerse === strReverse) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+//Write a program which accepts an array of 3 integers and sort them in ascending order.
+orderAscendingNumbers = (array) => {
+  if (!array.length) {
+    return "Provide a array with values";
+  }
+
+  const arraySorted = array.sort((a, b) => a - b);
+  return arraySorted;
+};
 
 /*
 Example:
 
 1) if input array is [ 39, 26, 28]  then 
-output will be 26, 28, 39.
+output will be 26, 28, 39.*/
 
+orderAscendingNumbers = (array) => {
+  if (!array.length) {
+    return "Provide a array with values";
+  }
+
+  const arraySorted = array.sort((a, b) => b - a);
+  return arraySorted;
+};
+
+/*
 2) if input array is [3934, 2426, 4628 ] then 
 output will be 2426 3934 4628.
 Write a program to takes input two matrix(3*3) array and calculate the multiplication of both matrix.
@@ -191,7 +226,7 @@ Example :
 Matrix 1st :
 4 4 4
 2 2 2
-3 3 3
+3 3 3 
 Matrix 2nd :
 1 4 3
 3 2 4
