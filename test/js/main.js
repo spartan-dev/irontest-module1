@@ -1,83 +1,83 @@
-const characters = [
-  {
-    name: "Rick Sanchez",
-    status: "Alive",
-    species: "Human",
-    type: "",
-    gender: "Male",
-  },
+// const characters = [
+//   {
+//     name: "Rick Sanchez",
+//     status: "Alive",
+//     species: "Human",
+//     type: "",
+//     gender: "Male",
+//   },
 
-  {
-    name: "Morty Smith",
-    status: "Alive",
-    species: "Human",
-    type: "",
-    gender: "Male",
-  },
+//   {
+//     name: "Morty Smith",
+//     status: "Alive",
+//     species: "Human",
+//     type: "",
+//     gender: "Male",
+//   },
 
-  {
-    name: "Summer Smith",
-    status: "Alive",
-    species: "Human",
-    type: "",
-    gender: "Female",
-  },
+//   {
+//     name: "Summer Smith",
+//     status: "Alive",
+//     species: "Human",
+//     type: "",
+//     gender: "Female",
+//   },
 
-  {
-    name: "Beth Smith",
-    status: "Alive",
-    species: "Human",
-    type: "",
-    gender: "Female",
-  },
+//   {
+//     name: "Beth Smith",
+//     status: "Alive",
+//     species: "Human",
+//     type: "",
+//     gender: "Female",
+//   },
 
-  {
-    name: "Jerry Smith",
-    status: "Alive",
-    species: "Human",
-    type: "",
-    gender: "Male",
-  },
+//   {
+//     name: "Jerry Smith",
+//     status: "Alive",
+//     species: "Human",
+//     type: "",
+//     gender: "Male",
+//   },
 
-  {
-    name: "Abadango Cluster Princess",
-    status: "Alive",
-    species: "Alien",
-    type: "",
-    gender: "Female",
-  },
+//   {
+//     name: "Abadango Cluster Princess",
+//     status: "Alive",
+//     species: "Alien",
+//     type: "",
+//     gender: "Female",
+//   },
 
-  {
-    name: "Abradolf Lincler",
-    status: "unknown",
-    species: "Human",
-    type: "Genetic experiment",
-    gender: "Male",
-  },
+//   {
+//     name: "Abradolf Lincler",
+//     status: "unknown",
+//     species: "Human",
+//     type: "Genetic experiment",
+//     gender: "Male",
+//   },
 
-  {
-    name: "Adjudicator Rick",
-    status: "Dead",
-    species: "Human",
-    type: "",
-    gender: "Male",
-  },
+//   {
+//     name: "Adjudicator Rick",
+//     status: "Dead",
+//     species: "Human",
+//     type: "",
+//     gender: "Male",
+//   },
 
-  {
-    name: "Agency Director",
-    status: "Dead",
-    species: "Human",
-    type: "",
-    gender: "Male",
-  },
-  {
-    name: "Alan Rails",
-    status: "Dead",
-    species: "Human",
-    type: "Superhuman (Ghost trains summoner)",
-    gender: "Male",
-  },
-];
+//   {
+//     name: "Agency Director",
+//     status: "Dead",
+//     species: "Human",
+//     type: "",
+//     gender: "Male",
+//   },
+//   {
+//     name: "Alan Rails",
+//     status: "Dead",
+//     species: "Human",
+//     type: "Superhuman (Ghost trains summoner)",
+//     gender: "Male",
+//   },
+// ];
 
 //Get the first three elements of the Array without altering the original Array
 getFirtsThreeElements = (array) => {
@@ -152,6 +152,13 @@ orderArray = () => {
 
   console.log("new order", membersGrouped);
 };
+
+getFirtsThreeElements(characters);
+getAliens(characters);
+newCharacter(characters);
+getFamilySmith(characters);
+familyBroken(characters);
+orderArray(characters);
 
 //In this part we execute our functions
 
