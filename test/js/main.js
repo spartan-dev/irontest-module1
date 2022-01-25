@@ -1,47 +1,80 @@
 //new array
+const axios = require("axios");
+
+async function getData() {
+    const data = await axios.get(`https://rickandmortyapi.com/api/character`);
+    const { results } = data.data;
+    //console.log(results)
+    return results
+}
 
 
 //Get the first three elements of the Array without altering the original Array
-getFirtsThreeElements=()=>{
-    //...write your code here
+getFirtsThreeElements = async() => {
+        const characters = await getData();
+        const theFirstThreeElements = characters.slice(0, 3)
+        console.log('The first three', theFirstThreeElements)
+    }
+    //Find all the characters whose species is Aliens nad return in new array
+getAliens = async() => {
+        const characters = await getData();
+        const alines = characters.filter((character) => {
+            return character.species === 'Alien'
+        })
+        console.log('the alien is:', alines)
+    }
+    //create a new character and add it to the matrix and add consecutive identifiers (1,2, ... n) to all characters
+newCharacter = async() => {
+        const characters = await getData();
+        const id = characters.length + 1;
+        const newCharacter = {
+            id,
+            name: "Robert Sanchez",
+            status: "Alive",
+            species: "Human",
+            type: "",
+            gender: "Male",
+        }
+        characters.push(newCharacter)
 
-    console.log('The first three',/** here your new answer*/)
-}
-//Find all the characters whose species is Aliens nad return in new array
-getAliens=()=>{
-    //...write your code here
-    console.log('the alien is:',/** here your new answer*/)
-}
-//create a new character and add it to the matrix and add consecutive identifiers (1,2, ... n) to all characters
-newCharacter=()=>{
-    //...write your code here
+        console.log('New Charanter and id to all:', characters)
+    }
+    //find the family smith (Morty, Beth, Summer, Jerry, Rick)  in a new Array called familySmith
+getFamilySmith = async() => {
+        const characters = await getData();
+        const familySmith = characters.filter((character) => {
+            return character.name.includes('Smith');
+        })
 
-    console.log('New Charanter and id to all:',/** here your new answer*/)
-}
-//find the family smith (Morty, Beth, Summer, Jerry, Rick)  in a new Array called familySmith
-getFamilySmith=()=>{
-    //...write your code here
+        //console.log('Family Smith:', familySmith)
+        return familySmith
+    }
+    //Jerry and Beth have divorced, remove Jerry from the Array Smith Family, and get a random family member and print all their values
+familyBroken = async() => {
+        const familySmith = await getFamilySmith();
+        console.log(familySmith.length)
 
-    console.log('Family Smith:',/** here your new answer*/)
-}
-//Jerry and Beth have divorced, remove Jerry from the Array Smith Family, and get a random family member and print all their values
-familyBroken=()=>{
-    //...write your code here
-
-    console.log('Family without Jerry',/** here your new answer*/)
-    console.log('Random member name:, status:, species:, type:, gender:')
-}
-//The Final test, Rick needs to have more order, the original Array creates a new object, in which you group by status, without altering the original
-orderArray=()=>{
-     //...write your code here
-
-    console.log('new order',/** here your new answer*/)
+        const familywithoutJerry = familySmith.filter((member) => {
+            return member.name != 'Jerry Smith';
+        });
+        console.log('Family without Jerry', familywithoutJerry);
+        const randomMember = familywithoutJerry[1];
+        console.log(`Random member name: ${randomMember.name}, status: ${randomMember.status}, species: ${randomMember.species}, type: ${randomMember.type}, gender: ${randomMember.gender}`)
+    }
+    //The Final test, Rick needs to have more order, the original Array creates a new object, in which you group by status, without altering the original
+orderArray = async() => {
+    const familySmith = await getFamilySmith();
+    console.log('new order', /** here your new answer*/ )
 }
 
 
 //In this part we execute our functions
 
-
+//getFirtsThreeElements()
+//getAliens()
+//newCharacter()
+//getFamilySmith()
+//familyBroken()
 
 // another problems 😈 <--- bborrar este emoji en ccaso de crash
 
@@ -55,15 +88,22 @@ Example:
 
 IsPalindrome("Anita lava la tina") returns true
 IsPalindrome("Anita lava la ropa") returns false
-IsPalindrome("Ana") returns true
-Write a program which accepts an array of 3 integers and sort them in ascending order.
-*/
+IsPalindrome("Ana") returns true*/
+
+
+function IsPalindrome(word) {
+    let re = /[\W_]/g;
+    let lowRegStr = word.toLowerCase().replace(re, '');
+    let reverseStr = lowRegStr.split('').reverse().join('');
+    return reverseStr === lowRegStr;
+}
+console.log(IsPalindrome("Anita lava la tina"));
+
+
+
+
+/*Write a program which accepts an array of 3 integers and sort them in ascending order.*/
 //input your code
-
-
-
-
-
 
 /*
 Example:
@@ -72,7 +112,17 @@ Example:
 output will be 26, 28, 39.
 
 2) if input array is [3934, 2426, 4628 ] then 
-output will be 2426 3934 4628.
+output will be 2426 3934 4628.*/
+
+let array = [39, 26, 28];
+
+function comparar(a, b) {
+    return a - b;
+}
+console.log(array.sort(comparar));
+
+
+/*
 Write a program to takes input two matrix(3*3) array and calculate the multiplication of both matrix.
 */
 //input your code
@@ -101,13 +151,12 @@ Notice that:
 20 = 4 * 1 + 4 * 3 + 4 * 1
 10 = 2 * 1 + 2 * 3 + 2 * 1
 15 = 3 * 1 + 3 * 3 + 3 * 1
+
+
+
 Write a program which takes integer number and prints the table of this number.
 */
 //input your code
-
-
-
-
 
 /*
 Example :
@@ -139,3 +188,11 @@ Example :
 
 
 //input your code
+
+function mult(number) {
+    for (var i = 1; i <= 10; i++) {
+        console.log(`${number} * ${i} = ` + number * i)
+    }
+}
+mult(2)
+mult(4)
