@@ -3,27 +3,30 @@
 
 //Get the first three elements of the Array without altering the original Array
 getFirtsThreeElements=()=>{
-    //...write your code here
-
-    console.log('The first three',/** here your new answer*/)
+    const slicedArray= charactersArray.slice(0,3);
+    console.log('The first three', slicedArray);
 }
+getFirtsThreeElements();
 //Find all the characters whose species is Aliens nad return in new array
 getAliens=()=>{
-    //...write your code here
-    console.log('the alien is:',/** here your new answer*/)
+    const answer = charactersArray.find(alien => alien.species==='Alien')
+    console.log('the alien is:',answer)  
 }
+getAliens();
 //create a new character and add it to the matrix and add consecutive identifiers (1,2, ... n) to all characters
 newCharacter=()=>{
-    //...write your code here
-
-    console.log('New Charanter and id to all:',/** here your new answer*/)
+    charactersArray.forEach((n, i) => n.id = i+1)
+    console.log('New Charanter and id to all:',charactersArray);
 }
+newCharacter();
 //find the family smith (Morty, Beth, Summer, Jerry, Rick)  in a new Array called familySmith
 getFamilySmith=()=>{
-    //...write your code here
-
-    console.log('Family Smith:',/** here your new answer*/)
+    const smiths = charactersArray.filter(a=>a.name.includes("Smith"));
+    const burp = charactersArray.filter(b=>b.name.includes("Sanchez"));
+    const result = smiths.concat(burp);
+    console.log('Family Smith:',result);  
 }
+getFamilySmith();
 //Jerry and Beth have divorced, remove Jerry from the Array Smith Family, and get a random family member and print all their values
 familyBroken=()=>{
     //...write your code here
