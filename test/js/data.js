@@ -1,6 +1,3 @@
-// Characters
- /**
-
     name: "Rick Sanchez"
     status: "Alive"
     species: "Human"
@@ -61,5 +58,3 @@
     species: "Human"
     type: "Superhuman (Ghost trains summoner)"
     gender: "Male"
-  
-  */
