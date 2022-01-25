@@ -1,47 +1,159 @@
-//new array
+const characters = [
+  {
+    name: "Rick Sanchez",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Male",
+  },
 
+  {
+    name: "Morty Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Male",
+  },
+
+  {
+    name: "Summer Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Female",
+  },
+
+  {
+    name: "Beth Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Female",
+  },
+
+  {
+    name: "Jerry Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Male",
+  },
+
+  {
+    name: "Abadango Cluster Princess",
+    status: "Alive",
+    species: "Alien",
+    type: "",
+    gender: "Female",
+  },
+
+  {
+    name: "Abradolf Lincler",
+    status: "unknown",
+    species: "Human",
+    type: "Genetic experiment",
+    gender: "Male",
+  },
+
+  {
+    name: "Adjudicator Rick",
+    status: "Dead",
+    species: "Human",
+    type: "",
+    gender: "Male",
+  },
+
+  {
+    name: "Agency Director",
+    status: "Dead",
+    species: "Human",
+    type: "",
+    gender: "Male",
+  },
+  {
+    name: "Alan Rails",
+    status: "Dead",
+    species: "Human",
+    type: "Superhuman (Ghost trains summoner)",
+    gender: "Male",
+  },
+];
 
 //Get the first three elements of the Array without altering the original Array
-getFirtsThreeElements=()=>{
-    //...write your code here
-
-    console.log('The first three',/** here your new answer*/)
-}
+getFirtsThreeElements = (array) => {
+  return array.slice(0, 3);
+};
 //Find all the characters whose species is Aliens nad return in new array
-getAliens=()=>{
-    //...write your code here
-    console.log('the alien is:',/** here your new answer*/)
-}
+getAliens = (array) => {
+  return array.filter((a) => a.species === "Alien");
+};
 //create a new character and add it to the matrix and add consecutive identifiers (1,2, ... n) to all characters
-newCharacter=()=>{
-    //...write your code here
+newCharacter = (array) => {
+  const newArr = array;
 
-    console.log('New Charanter and id to all:',/** here your new answer*/)
-}
+  const newChar = {
+    name: "Frank Tes",
+    status: "Dead",
+    species: "Human",
+    type: "",
+    gender: "Male",
+  };
+
+  newArr.push(newChar);
+
+  for (let i = 0; i < newArr.length; i++) {
+    newArr[i].identifier = i;
+  }
+
+  console.log("New Charanter and id to all:", newArr);
+  return newArr;
+};
 //find the family smith (Morty, Beth, Summer, Jerry, Rick)  in a new Array called familySmith
-getFamilySmith=()=>{
-    //...write your code here
+getFamilySmith = () => {
+  //...write your code here
 
-    console.log('Family Smith:',/** here your new answer*/)
-}
+  const familySmith = array.filter((a) => a.name.includes("Smith"));
+  console.log("Family Smith:", familySmith);
+};
+
 //Jerry and Beth have divorced, remove Jerry from the Array Smith Family, and get a random family member and print all their values
-familyBroken=()=>{
-    //...write your code here
+familyBroken = (array) => {
+  const newFamilySmith = array.filter(
+    (a) => a.name.includes("Smith") && !a.name.includes("Jerry")
+  );
 
-    console.log('Family without Jerry',/** here your new answer*/)
-    console.log('Random member name:, status:, species:, type:, gender:')
-}
+  const randomNumber = Math.floor(Math.random() * newFamilySmith.length - 1);
+
+  const randomMember = newFamilySmith[randomNumber];
+
+  console.log("RANDOM MEMBER", randomMember);
+
+  console.log("Family without Jerry", newFamilySmith);
+  console.log(
+    `Random member name:${randomMember.name}, status:${randomMember.status}, species:${randomMember.species}, type:${randomMember.type}, gender:${randomMember.gender}`
+  );
+
+  return newFamilySmith;
+};
 //The Final test, Rick needs to have more order, the original Array creates a new object, in which you group by status, without altering the original
-orderArray=()=>{
-     //...write your code here
+orderArray = () => {
+  const membersGrouped = {
+    alive: [],
+    dead: [],
+  };
 
-    console.log('new order',/** here your new answer*/)
-}
+  array.filter((element) => {
+    if (element.status.includes("Alive")) {
+      membersGrouped.alive.push(element);
+    } else {
+      membersGrouped.dead.push(element);
+    }
+  });
 
+  console.log("new order", membersGrouped);
+};
 
 //In this part we execute our functions
-
-
 
 // another problems 😈 <--- bborrar este emoji en ccaso de crash
 
@@ -60,11 +172,6 @@ Write a program which accepts an array of 3 integers and sort them in ascending 
 */
 //input your code
 
-
-
-
-
-
 /*
 Example:
 
@@ -76,9 +183,6 @@ output will be 2426 3934 4628.
 Write a program to takes input two matrix(3*3) array and calculate the multiplication of both matrix.
 */
 //input your code
-
-
-
 
 /*
 Example :
@@ -104,10 +208,6 @@ Notice that:
 Write a program which takes integer number and prints the table of this number.
 */
 //input your code
-
-
-
-
 
 /*
 Example :
@@ -136,6 +236,5 @@ Example :
 4*9 = 36
 4*10 = 40
 */
-
 
 //input your code
