@@ -62,13 +62,13 @@ const charactersArray = [{
 }]
 //Get the first three elements of the Array without altering the original Array
 getFirtsThreeElements = () => {
-
-    console.log('The first three', /** here your new answer*/ )
+    let firstElements = charactersArray.slice(0, 2)
+    console.log('The first three', firstElements )
 }
 //Find all the characters whose species is Aliens nad return in new array
 getAliens = () => {
-    //...write your code here
-    console.log('the alien is:', /** here your new answer*/ )
+    for (let i = 0; i < charactersArray.length; i++){
+        console.log('the alien is:', charactersArray.species[2])} 
 }
 //create a new character and add it to the matrix and add consecutive identifiers (1,2, ... n) to all characters
 newCharacter = () => {
